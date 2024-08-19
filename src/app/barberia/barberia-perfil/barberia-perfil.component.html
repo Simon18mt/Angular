@@ -1,0 +1,96 @@
+<div class="contenedor-ancho">
+  <div>
+    <h1>Informacion de perfil</h1>
+    <button routerLink="/agregarEditar" class="enviar">
+      Editar perfil y agregar servicios
+    </button>
+  </div>
+  <div class="contenedor-principal">
+    <div class="contenedor">
+      <div class="card1">
+        <h1>Foto</h1>
+        <div class="card-body">
+          <h5 class="card-title">Datos personales</h5>
+          <ul>
+            <li>Nombre: {{ nombre }}</li>
+            <li>Locacion: {{ locacion }}</li>
+            <li>Tipo de servicio: {{ servicio }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="contenedor">
+      <div class="card2">
+        <div class="card-body">
+          <h5 class="card-title">Quienes somos</h5>
+          <p class="card-text">
+            {{ datosInfo }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- **************************Carrusel de servicios del perfil************************** -->
+
+  <!-- 
+
+-->
+
+  <div class="contenedor-ancho">
+    <h2 class="Recomendacion">Nuestros servicios</h2>
+    <div class="carousel-container">
+      <button class="carousel-control prev" (click)="movePrev('carousel1')">
+        &#10094;
+      </button>
+      <div class="carousel-wrapper">
+        <div class="carousel" id="carousel1Inner">
+          <!-- Tarjetas duplicadas al final -->
+          <div class="card" style="width: 18rem">
+            <img src="assets/image1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title 1</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <!-- Tarjetas generadas dinámicamente -->
+          <div
+            *ngFor="let servicio of servicios; let i = index"
+            class="card"
+            style="width: 18rem"
+          >
+            <img src="assets/image1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">
+                Servicio: {{ servicio.nombreServicio }}
+              </h5>
+              <p class="card-text">Descripcion: {{ servicio.descripcion }}</p>
+              <p class="card-text">
+                <strong>Precio:</strong> {{ servicio.precio | currency }}
+              </p>
+              <button class="enviar">Agendar</button>
+            </div>
+          </div>
+          <!-- Tarjetas duplicadas al principio -->
+          <div class="card" style="width: 18rem">
+            <img src="assets/image1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title DUPLICADA</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control next" (click)="moveNext('carousel1')">
+        &#10095;
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+
+/* Estilos para el contenedor ancho */
+.contenedor-ancho {
+     
+    width: 80%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 20px;
+    background-color: #f0f0f0; /* Tono gris claro */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar el contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  }
+  
+  .contenedor-principal-inicio{
+    display: flex;
+  }
+  
+  .contenedor{
+    margin: 10px;
+  }
+  
+  .card1{
+    border-radius: 7px;
+    background-color: #f0f0f0; /* Tono gris claro */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar el contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    padding: 8px;
+    
+  }
+  .card2{
+    border-radius: 7px;
+    width: 40rem;
+    height: 19rem;
+    background-color: #f0f0f0; /* Tono gris claro */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar el contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+    padding: 8px;
+      
+    
+  }
+  .editarInfo{
+    width: 90%;
+    height: 140px;
+  }
+  
+  /* estios para las listas de informacion personal */
+  ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el relleno por defecto */
+    margin: 0; /* Elimina el margen por defecto */
+    font-family: Arial, sans-serif; /* Establece una fuente */
+    background-color: #f9f9f9; /* Color de fondo de la lista */
+    border: 1px solid #ddd; /* Borde alrededor de la lista */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 300px; /* Ancho fijo para la lista */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de elevación */
+    margin: 20px auto; /* Centra la lista horizontalmente */
+  }
+  
+  li {
+    padding: 15px; /* Espacio dentro de cada ítem */
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre ítems */
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+  li:last-child {
+    border-bottom: none; /* Elimina la línea divisoria del último ítem */
+  }
+  
+  li:nth-child(odd) {
+    background-color: #f1f1f1; /* Color de fondo alternativo para ítems impares */
+  }
+  
+  li:nth-child(even) {
+    background-color: #ffffff; /* Color de fondo para ítems pares */
+  }
+  
+  button {
+    padding: 10px 20px;
+     
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Transición para suavizar cambios de estado */
+  }
+  
+  /* Estilos específicos para el botón "enviar" */
+  .enviar {
+    background-color: rgb(58, 177, 131);
+  }
+  
+  .enviar:hover {
+    background-color: rgb(46, 145, 104); /* Color más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Ligero aumento de tamaño */
+  }
+  
+  .enviar:active {
+    background-color: rgb(37, 108, 78); /* Color aún más oscuro cuando se hace clic */
+    transform: scale(0.98); /* Ligera reducción de tamaño al hacer clic */
+  }
+  
+   
+  /* *****************************segundo contenedor***************************** */
+  /* contenedor para agregar servicios  */
+  
+  /* Contenedor principal que envuelve todas las tarjetas */
+  .contenedor-principal {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en varias filas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: space-between; /* Asegura que las tarjetas se distribuyan uniformemente */
+  }
+  
+  /* Cada contenedor individual que envuelve una tarjeta */
+  .contenedor {
+    flex: 1 1 calc(25% - 20px); /* Cada contenedor ocupa un 25% del ancho menos el espacio entre ellos */
+    box-sizing: border-box; /* Asegura que el padding y borde se incluyan en el ancho y alto */
+  }
+  
+  /* Tarjetas */
+  .card {
+    padding: 7px;
+    background-color: rgb(108, 95, 91);
+    color: white;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas */
+    box-sizing: border-box;
+  }
+  
+  .servicio {
+    background: linear-gradient(to right, #4286f4, #373B44); /* Fondo degradado */
+  }
+  
+  .tituloservicios{
+    margin: 10px;
+  }

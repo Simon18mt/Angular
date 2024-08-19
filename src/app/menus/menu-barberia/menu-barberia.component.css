@@ -1,0 +1,90 @@
+.contenedor-ancho {
+     
+    width: 100%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 70px;
+    background-color: #dddbdb; /* Tono gris claro */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar el contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  }
+
+  .contenedor{
+    margin: 50px;
+    padding: 50px;
+  }
+  .title{
+    text-align: center;
+    margin: 20px;
+    margin-bottom: 10px;
+  }
+
+    /* Estilos específicos para el botón "enviar" */
+    .enviar {
+        background-color: rgb(58, 177, 131);
+      }
+      
+      .enviar:hover {
+        background-color: rgb(46, 145, 104); /* Color más oscuro al pasar el ratón */
+        transform: scale(1.05); /* Ligero aumento de tamaño */
+      }
+      
+      .enviar:active {
+        background-color: rgb(37, 108, 78); /* Color aún más oscuro cuando se hace clic */
+        transform: scale(0.98); /* Ligera reducción de tamaño al hacer clic */
+      }
+
+      /* *******************lista ciudades ***************** */
+  .Recomendacion-listaCiudades{
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+  }
+ /* Estilos para el título */
+/* Estilos para el título */
+.Recomendacion-listaCiudades {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la cuadrícula de ciudades */
+.ciudades-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 10px; /* Espacio entre los enlaces */
+  justify-items: center; /* Centrar los enlaces en su columna */
+}
+
+/* Estilos para cada enlace de ciudad */
+.ciudad-link {
+   
+  color: rgb(0, 0, 0);
+  padding: 10px 15px; /* Ajusta el padding para que no se vean tan grandes */
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px; /* Reduce el tamaño de la fuente */
+  font-weight: bold;
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ciudad-link:hover {
+  background-color: rgb(46, 145, 104);
+  transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+.contenedor-ancho-ciudades{
+       
+  width: 100%;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 10px;
+  margin: 10px;
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: white;  
+  border-radius: 8px; /* Bordes redondeados opcionales */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar el contenedor */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}

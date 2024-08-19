@@ -1,0 +1,66 @@
+<div class="contenedor-principa">
+  <form [formGroup]="formUser">
+    <div>
+      <label for="name">Nombre:</label>
+
+      <input id="name" formControlName="nombre" name="nombre" />
+      <!-- una señal de alerta para la validacion -->
+      <div
+        class="alert alert-danger mt-2"
+        [hidden]="nombre.valid || nombre.pristine"
+      >
+        El nombre es obligatorio
+      </div>
+    </div>
+    <div>
+      <label for="email">Correo Electrónico:</label>
+      <input id="email" formControlName="correo" name="correo" />
+      <!-- una señal de alerta para la validacion -->
+      <div
+        class="alert alert-danger mt-2"
+        [hidden]="correo.valid || correo.pristine"
+      >
+        <span *ngIf="formUser.get('correo')?.errors?.['required']"
+          >el email es obligatorio</span
+        >
+        <span *ngIf="formUser.get('correo')?.errors?.['email']"
+          >el email debe de ser valido</span
+        >
+      </div>
+    </div>
+
+    <div>
+      <label for="phone">Teléfono:</label>
+      <input id="phone" formControlName="telefono" name="telefono" />
+      <!-- una señal de alerta para la validacion -->
+      <div
+        class="alert alert-danger mt-2"
+        [hidden]="telefono.valid || telefono.pristine"
+      >
+        El telefono es obligatorio
+      </div>
+    </div>
+    <div>
+      <label for="name">Contraseña:</label>
+      <input
+        type="password"
+        id="Contraseña"
+        formControlName="password"
+        name="Contraseña"
+      />
+      <!-- una señal de alerta para la validacion -->
+      <div
+        class="alert alert-danger mt-2"
+        [hidden]="password.valid || password.pristine"
+      >
+        La contraseña es obligatoria
+      </div>
+    </div>
+    <!-- para bloquear el boton hasta que todos los campos esten llenos -->
+    <button (click)="Acceso()" class="enviar">
+      <!-- [disabled]="formUser.invalid" -->
+      Enviar
+    </button>
+    <button routerLink="" class="volver">Volver</button>
+  </form>
+</div>

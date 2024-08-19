@@ -1,0 +1,154 @@
+<!-- *****************************primer contenedor***************************** -->
+<!-- contenedor para editar la informacion -->
+<div class="contenedor-ancho">
+  <div>
+    <h1>Editar perfil</h1>
+    <button routerLink="/perfilBarbero" class="enviar">Ir a mi perfil</button>
+  </div>
+
+  <div class="contenedor-principal-inicio">
+    <div class="contenedor">
+      <div class="card1">
+        <h1>Foto</h1>
+        <div class="card-body">
+          <h5 class="card-title">Editar información de perfil</h5>
+          <ul>
+            <li>
+              Nombre:
+              <input
+                type="text"
+                [(ngModel)]="nombre"
+                (blur)="updateInfo('nombre', nombre)"
+                (keydown.enter)="updateInfo('nombre', nombre)"
+              />
+            </li>
+            <li>
+              Locación:
+              <input
+                type="text"
+                [(ngModel)]="locacion"
+                (blur)="updateInfo('locacion', locacion)"
+                (keydown.enter)="updateInfo('locacion', locacion)"
+              />
+            </li>
+            <li>
+              Tipo de servicio:
+              <input
+                type="text"
+                [(ngModel)]="servicio"
+                (blur)="updateInfo('servicio', servicio)"
+                (keydown.enter)="updateInfo('servicio', servicio)"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="contenedor">
+      <div class="card2">
+        <div class="card-body">
+          <h5 class="card-title">Quienes somos</h5>
+          <p class="card-text">Editar Información:</p>
+          <textarea
+            class="editarInfo"
+            [(ngModel)]="datosInfo"
+            (keydown.enter)="updateInfo('datosInfo', datosInfo)"
+            (keydown.enter)="updateInfo('datosInfo', datosInfo)"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- *****************************segundo contenedor***************************** -->
+<!-- ************************************* AGREGAR SERVCIOS ************************************* -->
+<!-- contenedor para agregar servicios -->
+<div class="contenedor-ancho">
+  <h1 class="titulo">Crear nuevos servicios</h1>
+  <h4>Crea tus propios servicios y compartelos con la comunidad</h4>
+  <div class="formulario-contenedor">
+    <div class="card" style="width: 18rem">
+      <form
+        class="formulario"
+        [formGroup]="formServicio"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="mb-3">
+          <!-- nombre servicio -->
+          <label class="form-label">Nombre del servicio</label>
+          <input
+            formControlName="nombreServicio"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div
+          class="alert alert-danger mt-2"
+          [hidden]="
+            formServicio.get('nombreServicio')?.valid ||
+            formServicio.get('nombreServicio')?.pristine
+          "
+        >
+          El nombre es obligatorio
+        </div>
+
+        <div class="mb-3">
+          <!-- descripcion servicio -->
+          <label class="form-label">Descripcion</label>
+          <input
+            formControlName="descripcion"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div
+          class="alert alert-danger mt-2"
+          [hidden]="
+            formServicio.get('descripcion')?.valid ||
+            formServicio.get('descripcion')?.pristine
+          "
+        >
+          La descripcion es obligatoria
+        </div>
+
+        <div class="mb-3">
+          <!-- precio servicio -->
+          <label class="form-label">Precio</label>
+          <input formControlName="precio" type="number" class="form-control" />
+        </div>
+        <div
+          class="alert alert-danger mt-2"
+          [hidden]="
+            formServicio.get('precio')?.valid ||
+            formServicio.get('precio')?.pristine
+          "
+        >
+          El precio es obligatorio
+        </div>
+
+        <button class="btn btn-primary" [disabled]="formServicio.invalid">
+          Enviar
+        </button>
+      </form>
+    </div>
+    <!-- cartas que se crearan -->
+    <h1 class="tituloservicios">Mis servicios:</h1>
+    <div class="contenedor-principal">
+      <div *ngFor="let servicio of servicios; let i = index" class="contenedor">
+        <div class="card" style="width: 18rem; margin-bottom: 20px">
+          <div class="card-body">
+            <h5 class="card-title">Servicio: {{ servicio.nombreServicio }}</h5>
+            <p class="card-text">Descripcion: {{ servicio.descripcion }}</p>
+            <p class="card-text">
+              <strong>Precio:</strong> {{ servicio.precio | currency }}
+            </p>
+            <button class="btn btn-danger" (click)="eliminarServicio(i)">
+              Borrar tarjeta
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
